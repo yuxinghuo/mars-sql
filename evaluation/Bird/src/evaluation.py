@@ -120,16 +120,16 @@ def print_data(score_lists,count_lists):
 
 if __name__ == '__main__':
     args_parser = argparse.ArgumentParser()
-    args_parser.add_argument('--predicted_sql_path', type=str, required=True, default='')
-    args_parser.add_argument('--ground_truth_path', type=str, required=True, default='')
-    args_parser.add_argument('--data_mode', type=str, required=True, default='dev')
-    args_parser.add_argument('--db_root_path', type=str, required=True, default='')
+    args_parser.add_argument('--predicted_sql_path', type=str, default='../exp_result/turbo_output/')
+    args_parser.add_argument('--ground_truth_path', type=str, default='../data/')
+    args_parser.add_argument('--data_mode', type=str,  default='dev')
+    args_parser.add_argument('--db_root_path', type=str,  default='../data/dev_20240627/dev_databases/')
     args_parser.add_argument('--num_cpus', type=int, default=1)
     args_parser.add_argument('--meta_time_out', type=float, default=30.0)
     args_parser.add_argument('--mode_gt', type=str, default='gt')
     args_parser.add_argument('--mode_predict', type=str, default='gpt')
     args_parser.add_argument('--difficulty',type=str,default='simple')
-    args_parser.add_argument('--diff_json_path',type=str,default='')
+    args_parser.add_argument('--diff_json_path',type=str,default='../data/dev_20240627/dev.json')
     args = args_parser.parse_args()
     exec_result = []
 
